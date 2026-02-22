@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
     LayoutDashboard,
     Shield,
+    Shield as ShieldIcon,
     FileText,
     AlertCircle,
     History,
@@ -69,12 +70,16 @@ const DashboardLayout = () => {
                 ${isSidebarOpen ? 'w-64 translate-x-0' : '-translate-x-full lg:translate-x-0 lg:w-20'}
             `}>
                 <div className="p-6 flex items-center justify-between overflow-hidden whitespace-nowrap">
-                    <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-[#1E90FF] rounded-lg flex-shrink-0 flex items-center justify-center shadow-lg shadow-blue-500/20">
-                            <Shield className="w-6 h-6 text-white" />
+                    <Link to="/" className="flex items-center gap-3 cursor-pointer">
+                        <div className="bg-blue-600 p-2 rounded-lg">
+                            <ShieldIcon className="text-white w-5 h-5" />
                         </div>
-                        {isSidebarOpen && <span className="text-xl font-bold tracking-tight">Insurance</span>}
-                    </div>
+                        {isSidebarOpen && (
+                            <h1 className="text-lg font-semibold text-[#0B1F3A]">
+                                Insurance
+                            </h1>
+                        )}
+                    </Link>
                     {/* Mobile Close Button */}
                     <button onClick={() => setSidebarOpen(false)} className="lg:hidden p-1 text-slate-400 hover:text-white transition-colors">
                         <X size={24} />

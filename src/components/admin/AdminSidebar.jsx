@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import {
     LayoutDashboard,
     UserCheck,
@@ -10,12 +10,10 @@ import {
     Users,
     History,
     Globe,
-    UserCircle,
+    Shield as ShieldIcon,
     Layers,
-    LogOut,
     X
 } from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
 
 const AdminSidebar = ({ isOpen, onClose }) => {
     const navItems = [
@@ -48,15 +46,21 @@ const AdminSidebar = ({ isOpen, onClose }) => {
             `}>
                 {/* Branding */}
                 <div className="p-6 border-b border-slate-700/50 flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-[#1E90FF] rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-                            <span className="font-bold text-white text-xl">I</span>
+                    <Link
+                        to="/admin/dashboard"
+                        className="flex items-center gap-3 cursor-pointer"
+                        onClick={() => {
+                            if (window.innerWidth < 768) onClose();
+                        }}
+                    >
+                        <div className="bg-blue-600 p-2 rounded-lg">
+                            <ShieldIcon className="text-white w-5 h-5" />
                         </div>
                         <div>
-                            <h1 className="font-bold text-lg tracking-tight">Admin</h1>
-                            <p className="text-[10px] text-blue-400 font-medium uppercase tracking-[0.2em]">Ops Center</p>
+                            <h1 className="text-white font-bold text-lg">Admin</h1>
+                            <p className="text-xs text-gray-400">OPS CENTER</p>
                         </div>
-                    </div>
+                    </Link>
                     {/* Mobile Close Button */}
                     <button onClick={onClose} className="md:hidden p-2 text-slate-400 hover:text-white transition-colors">
                         <X size={20} />

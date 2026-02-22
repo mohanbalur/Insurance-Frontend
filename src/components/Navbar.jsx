@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, User, Shield, LogOut, LayoutDashboard } from 'lucide-react';
+import { Menu, X, ChevronDown, User, Shield as ShieldIcon, LogOut, LayoutDashboard } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { normalizeRole } from '../utils/role';
 
@@ -36,11 +36,13 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20 items-center">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                        <div className="w-10 h-10 bg-[#1E90FF] rounded-lg flex items-center justify-center">
-                            <Shield className="w-6 h-6 text-white" />
+                    <Link to="/" className="flex items-center gap-3 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                        <div className="bg-blue-600 p-2 rounded-lg">
+                            <ShieldIcon className="text-white w-5 h-5" />
                         </div>
-                        <span className="text-2xl font-bold text-[#0B1F3A]">Insurance</span>
+                        <h1 className="text-xl font-bold text-[#0B1F3A]">
+                            Insurance
+                        </h1>
                     </Link>
 
                     {/* Nav Links - Desktop */}
@@ -179,7 +181,7 @@ const Navbar = () => {
                                     className="block w-full py-3 px-4 bg-slate-50 text-slate-700 rounded-xl font-medium flex items-center gap-2"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                    <Shield size={18} />
+                                    <ShieldIcon size={18} />
                                     Account Dashboard
                                 </Link>
                                 <button

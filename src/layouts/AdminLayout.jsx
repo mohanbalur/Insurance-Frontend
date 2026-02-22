@@ -79,7 +79,7 @@ const AdminLayout = () => {
             <aside className="hidden md:block w-64 shrink-0 h-full border-r border-white/10 bg-[#0B1F3A]">
                 <div className="h-full flex flex-col">
                     <div className="h-16 flex items-center px-6 border-b border-white/10">
-                        <div className="flex items-center gap-3">
+                        <Link to="/admin/dashboard" className="flex items-center gap-3 cursor-pointer">
                             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
                                 <Shield size={20} className="text-white" />
                             </div>
@@ -87,7 +87,7 @@ const AdminLayout = () => {
                                 <h1 className="text-xl font-bold tracking-tight text-white">Admin</h1>
                                 <p className="text-[10px] text-blue-400 font-bold tracking-widest uppercase">Ops Center</p>
                             </div>
-                        </div>
+                        </Link>
                     </div>
 
                     <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
@@ -203,12 +203,16 @@ const AdminLayout = () => {
 
                         <div className="relative w-64 bg-[#0B1F3A] border-r border-white/10 h-full flex flex-col shadow-2xl animate-in slide-in-from-left duration-200">
                             <div className="h-16 shrink-0 flex items-center justify-between px-6 border-b border-white/10">
-                                <div className="flex items-center gap-3">
+                                <Link
+                                    to="/admin/dashboard"
+                                    className="flex items-center gap-3 cursor-pointer"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
                                     <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
                                         <Shield size={20} className="text-white" />
                                     </div>
                                     <span className="font-bold text-white text-lg">Admin</span>
-                                </div>
+                                </Link>
                                 <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/10">
                                     <X size={20} />
                                 </button>

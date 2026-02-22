@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CountUp from 'react-countup';
 
 const Hero = ({ data }) => {
     const { title, content } = data;
@@ -41,7 +42,31 @@ const Hero = ({ data }) => {
                         <div className="grid grid-cols-3 gap-6 border-t border-slate-100 pt-6">
                             {stats?.map((stat, idx) => (
                                 <div key={idx}>
-                                    <p className="text-3xl font-bold text-[#1E90FF] mb-1">{stat.value}</p>
+                                    <p className="text-3xl font-bold text-[#1E90FF] mb-1">
+                                        {stat.value === '500K+' ? (
+                                            <>
+                                                <CountUp
+                                                    end={500}
+                                                    duration={2}
+                                                    enableScrollSpy
+                                                    scrollSpyOnce
+                                                />
+                                                K+
+                                            </>
+                                        ) : stat.value === '98%' ? (
+                                            <>
+                                                <CountUp
+                                                    end={98}
+                                                    duration={2}
+                                                    enableScrollSpy
+                                                    scrollSpyOnce
+                                                />
+                                                %
+                                            </>
+                                        ) : (
+                                            stat.value
+                                        )}
+                                    </p>
                                     <p className="text-sm text-slate-500 font-medium uppercase tracking-wider">{stat.label}</p>
                                 </div>
                             ))}

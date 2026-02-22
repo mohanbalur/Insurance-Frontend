@@ -27,7 +27,7 @@ const LoginPage = () => {
         if (role === 'ADMIN') {
             navigate('/admin/dashboard');
         } else if (role === 'AGENT') {
-            navigate('/agent/dashboard');
+            navigate('/');
         } else if (from) {
             navigate(from, { replace: true });
         } else {
