@@ -67,7 +67,7 @@ const HomePage = () => {
     if (!pageData) return null;
 
     return (
-        <div className="animate-fadeIn">
+        <div className="w-full animate-fadeIn">
             {pageData.sections
                 .filter((section) => section.isActive)
                 .slice()
@@ -76,11 +76,9 @@ const HomePage = () => {
                     <section
                         key={section._id || section.sectionId}
                         id={section.type}
-                        className={`py-8 md:py-10 px-4 md:px-6 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} ${section.type === 'hero' || section.type === 'features' || section.type === 'faq' ? 'py-0 px-0' : ''}`}
+                        className={`w-full ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} ${section.type === 'hero' || section.type === 'features' || section.type === 'faq' ? 'py-0 px-0' : 'py-16 px-6 md:px-12 lg:px-20'}`}
                     >
-                        <div className="max-w-6xl mx-auto">
-                            <DynamicSectionRenderer section={section} />
-                        </div>
+                        <DynamicSectionRenderer section={section} />
                     </section>
                 ))}
         </div>

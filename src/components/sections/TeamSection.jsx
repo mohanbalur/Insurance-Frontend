@@ -14,7 +14,7 @@ const TeamSection = ({ data }) => {
                 {title}
             </h2>
             {members.length === 0 ? (
-                <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">{fallbackText}</p>
+                <p className="text-lg text-gray-600 text-center">{fallbackText}</p>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
                     {members.map((member, idx) => (

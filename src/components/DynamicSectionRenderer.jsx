@@ -28,10 +28,10 @@ const DynamicSectionRenderer = ({ section }) => {
             return <PressSection data={section} />;
         case 'custom':
             return (
-                <section className="py-20 px-4 max-w-7xl mx-auto">
+                <div className="w-full">
                     <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
                     <div dangerouslySetInnerHTML={{ __html: section.content?.html || '' }} />
-                </section>
+                </div>
             );
         default:
             return null;

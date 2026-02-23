@@ -8,7 +8,7 @@ const Hero = ({ data }) => {
 
     return (
         <section className="relative bg-white py-10 lg:py-14 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full px-6 md:px-12 lg:px-20">
                 <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                     {/* Text Column */}
                     <div className="relative z-10">
@@ -74,7 +74,7 @@ const Hero = ({ data }) => {
                     </div>
 
                     {/* Image Column */}
-                    <div className="mt-10 lg:mt-0 relative">
+                    <div className="mt-10 lg:mt-0 relative lg:justify-self-end">
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                             <img
                                 src={imageUrl}

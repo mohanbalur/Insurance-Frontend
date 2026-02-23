@@ -14,11 +14,11 @@ const AboutSection = ({ data }) => {
                 {title}
             </h2>
             {subtitle ? (
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-3">
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-3">
                     {subtitle}
                 </p>
             ) : null}
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 {description}
             </p>
         </div>

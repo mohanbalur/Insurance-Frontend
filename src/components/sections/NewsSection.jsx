@@ -9,7 +9,7 @@ const NewsSection = ({ data }) => {
     return (
         <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0B1F3A] mb-6 md:mb-7 text-center">{title}</h2>
-            {subtitle ? <p className="text-base md:text-lg text-gray-600 text-center max-w-3xl mx-auto mb-5 md:mb-6">{subtitle}</p> : null}
+            {subtitle ? <p className="text-base md:text-lg text-gray-600 text-center mb-5 md:mb-6">{subtitle}</p> : null}
 
             {items.length > 0 ? (
                 <div className="grid md:grid-cols-2 gap-5 md:gap-6">

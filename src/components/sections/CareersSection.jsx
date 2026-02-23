@@ -13,7 +13,7 @@ const CareersSection = ({ data }) => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#0B1F3A] mb-4 md:mb-5">
                 {title}
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-5 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 mb-5 leading-relaxed">
                 {description}
             </p>
             <button className="bg-[#1E90FF] text-white px-6 py-3 rounded-lg hover:opacity-90 transition">
